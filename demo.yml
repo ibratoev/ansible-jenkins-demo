@@ -1,0 +1,19 @@
+- name: Example playbook
+  hosts: localhost
+  vars:
+    file_dest: /tmp/test.txt
+  tasks:
+    - name: Copy a file
+      copy:
+        dest: "{{ file_dest }}"
+        content: this is a test
+        
+    - name: Copy the same file again
+      copy:
+        dest: "{{ file_dest }}"
+        content: this is a test
+   
+    - name: Change a file
+      copy:
+        dest: "{{ file_dest }}"
+        content: this is another test
